@@ -68,6 +68,36 @@ Abra [http://localhost:3000](http://localhost:3000) no navegador. Se a porta 300
 - `app/api/interpretations/[id]/route.ts`
 - `lib/appwrite_client.ts`
 
+## Como funciona o roteamento (App Router)
+
+No Next.js App Router, cada pasta em `app/` representa uma rota:
+
+- `app/page.tsx` → `/`
+- `app/create/page.tsx` → `/create`
+- `app/edit/[id]/page.tsx` → `/edit/:id` (rota dinâmica)
+
+### Rotas dinâmicas com `[id]`
+
+Pastas ou arquivos com colchetes criam parâmetros dinâmicos:
+
+- `app/edit/[id]/page.tsx` captura `id` de URLs como `/edit/123`
+- `app/api/interpretations/[id]/route.ts` captura `id` em chamadas API REST como `/api/interpretations/123`
+
+Esse `id` é acessível via `params.id` em handlers (server components/route handlers) e via `useParams()` em client components.
+
+### Roteamento de API
+
+No App Router, rotas de API também são construídas por pastas:
+
+- `app/api/interpretations/route.ts` → rota `GET` e `POST` para `/api/interpretations`
+- `app/api/interpretations/[id]/route.ts` → rota `GET`, `PUT`, `DELETE` para `/api/interpretations/:id`
+
+### Arquivos e bons hábitos
+
+- `next.config.ts` configura comportamento do Next.
+- `app/layout.tsx` define layout global e `metadata` para todas as páginas.
+- Componentes podem ficar em `app/components/` ou `components/` para organização.
+
 ## Notas
 
 - O estado de itens usa `useState<IInterpretation[]>([])` para evitar `undefined`.
