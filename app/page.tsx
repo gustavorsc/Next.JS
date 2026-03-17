@@ -111,13 +111,13 @@ export default function Home() {
                 onClick={() => setConfirmDelete(null)}
                 className="rounded-md border border-slate-300 px-4 py-2 bg-white text-slate-700 hover:bg-slate-100"
               >
-                Não
+                No
               </button>
               <button
                 onClick={() => handleDelete(confirmDelete.id)}
                 className="rounded-md bg-red-600 px-4 py-2 text-white hover:bg-red-700"
               >
-                Sim
+                Yes
               </button>
             </div>
           </div>

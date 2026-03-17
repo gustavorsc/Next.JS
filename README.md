@@ -51,13 +51,13 @@ Abra [http://localhost:3000](http://localhost:3000) no navegador. Se a porta 300
 - Listar interpretações.
 - Criar nova interpretação.
 - Editar interpretação existente.
-- Excluir interpretação com modal de confirmação (inclui `term` no texto).
+- Excluir interpretação com modal de confirmação.
 
 ## Como testar exclusão
 
 1. Na listagem, clique em **Delete**.
 2. O modal aparece: "Would you like to confirm the exclusion of the item: {term}?"
-3. Clique em **Sim** para excluir ou **Não** para cancelar.
+3. Clique em **Yes** para excluir ou **No** para cancelar.
 
 ## Estrutura principal
 
